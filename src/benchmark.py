@@ -17,13 +17,13 @@ def start(urls):
         print(f'{idx}/{count} ... ', end=' ', flush=True)
 
         response = requests.get(url)
-        size = to_bytes(content=response.content, ndigits=2, unit=unit)
-        total_size += size
+        total_size += len(response.content)
 
+        size = to_bytes(content=response.content, ndigits=2, unit=unit)
         print(f'{size} {unit}')
 
     end = datetime.now()
-    total_size = convert_to(dst=total_unit, src=unit, value=total_size)
+    total_size = convert_to(dst=total_unit, src='B', value=total_size)
     total_time = round((end - start).total_seconds(), 2)
 
     print()
