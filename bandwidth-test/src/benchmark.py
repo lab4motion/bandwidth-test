@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-from .utils import convert_to, to_bytes
+from utils.utils import convert_to, to_bytes
 
 
 def start(urls):
@@ -14,7 +14,7 @@ def start(urls):
     total_size = 0
     start = datetime.now()
     for idx, url in enumerate(urls):
-        print(f'{idx}/{count} ... ', end=' ', flush=True)
+        print(f'{idx + 1}/{count} ... ', end=' ', flush=True)
 
         response = requests.get(url)
         total_size += len(response.content)

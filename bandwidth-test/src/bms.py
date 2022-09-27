@@ -1,9 +1,8 @@
 import requests
 
-from configs.config import Config
-
-from .auth import Auth
-from .utils import is_successful, urljoin
+from utils.auth import Auth
+from utils.config import Config
+from utils.utils import is_successful, urljoin
 
 
 def service_info(service_id):

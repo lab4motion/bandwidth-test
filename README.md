@@ -1,3 +1,5 @@
+# Setup environment
+
 1. Configure virtual environment
 
         python3.8 -m venv ./venv
@@ -7,11 +9,20 @@
 
 1. Fill environments config
 
-    Navigate to `configs/environments` and fill in the environment data.  
+    Navigate to `./environments.py` and fill in the environment data.  
     If you don't know how to fill it, contact the author of this bandwidth test.
 
 
-1. Run test
+# Run environment
 
-        python3.8 -m venv ./venv
-        python ./bandwidth-test.py --service SERVICE
+1. Run virtual environment
+
+        source ./venv/bin/activate
+        export PYTHONPATH=${PYTHONPATH}:${PWD}
+
+
+# Bandwidth test
+
+1. Run the bandwitch test
+
+        python ./bandwidth-test/run.py --service SERVICE

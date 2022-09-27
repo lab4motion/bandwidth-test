@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-from configs import environments
-from configs.config import Config
+import environments
+from utils.auth import Auth
+from utils.config import Config
+
 from src import benchmark
 from src import bms
 from src.argparse import parser
-from src.auth import Auth
 
 
 def execute(service_id):
