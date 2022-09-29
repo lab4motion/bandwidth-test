@@ -8,3 +8,12 @@ parser.add_argument(
     nargs='?',
     help='Service ID for which the pattern list will be downloaded',
 )
+parser.add_argument(
+    '-o', '--optimize',
+    required=False,
+    action='store_true',
+    help=(
+        'Use for decreasing the size of downloaded thumbnails: '
+        'max 700px and 50%% of quality.'
+    ),
+)

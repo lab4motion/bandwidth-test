@@ -23,6 +23,13 @@
 
 # Bandwidth test
 
-1. Run the bandwitch test
+1. Run the bandwidth test to download the original images size
+
+        python ./bandwidth-test/run.py --service SERVICE
+
+1. Run the bandwidth test to download the decreased images size
+
+    On the fly the maximum image dimension will be decreased to 700px and
+    compression with 50% of quality will be used.
 
         python ./bandwidth-test/run.py --service SERVICE

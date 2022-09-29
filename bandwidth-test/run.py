@@ -7,9 +7,10 @@ from utils.config import Config
 from src import benchmark
 from src import bms
 from src.argparse import parser
+from src.url_modification import optimize_urls
 
 
-def execute(service_id):
+def execute(service_id, optimize):
     Config(config_provider=environments.DIG_2021_1())
     Auth(
         sso_url=Config.instance().sso_url,
@@ -25,9 +26,16 @@ def execute(service_id):
     )
     url_list = [pattern['image'] for pattern in patterns]
 
+    if optimize:
+        url_list = optimize_urls(
+            urls=url_list,
+            max_dimension=700,
+            quality=50,
+        )
+
     benchmark.start(urls=url_list)
 
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    execute(service_id=args.service)
+    execute(service_id=args.service, optimize=args.optimize)
