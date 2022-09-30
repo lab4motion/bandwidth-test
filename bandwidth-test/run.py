@@ -3,11 +3,11 @@
 import environments
 from utils.auth import Auth
 from utils.config import Config
+from utils.url_modification import optimize_urls
 
 from src import benchmark
 from src import bms
 from src.argparse import parser
-from src.url_modification import optimize_urls
 
 
 def execute(service_id, optimize):
