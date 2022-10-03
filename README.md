@@ -4,7 +4,7 @@
 
         python3.8 -m venv ./venv
         source ./venv/bin/activate
-        python3 -m pip install -r requirements.txt
+        python -m pip install -r requirements.txt
 
 
 1. Fill environments config
@@ -32,4 +32,14 @@
     On the fly the maximum image dimension will be decreased to 700px and
     compression with 50% of quality will be used.
 
-        python ./bandwidth-test/run.py --service SERVICE
+        python ./bandwidth-test/run.py --service SERVICE --optimize
+
+
+# Decrease size of thumbnails
+
+1. Run the script which will decrease the size of products and patterns thumbnails
+
+    The maximum dimension of the thumbnail will be decreased to 700px and
+    compression with 50% of quality will be used.
+
+        python ./decrease-thumbnails/run.py --customer CUSTOMER
